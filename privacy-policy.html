@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySupli — Privacy Policy / Política de Privacidad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #F8F7F4;
+            --surface: #FFFFFF;
+            --accent: #2D5BE3;
+            --accent-light: #EEF2FF;
+            --text-primary: #1A1A2E;
+            --text-secondary: #5A5A72;
+            --text-tertiary: #9999AA;
+            --border: #E8E8EE;
+            --pill-inactive: #EBEBF0;
+            --radius: 16px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--bg);
+            color: var(--text-primary);
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        header {
+            background: rgba(255,255,255,0.92);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(12px);
+        }
+        .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-icon {
+            width: 36px; height: 36px;
+            background: var(--accent);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 18px;
+        }
+        .logo-name {
+            font-family: 'DM Serif Display', serif;
+            font-size: 20px;
+            color: var(--text-primary);
+            letter-spacing: -0.3px;
+        }
+        .lang-toggle {
+            display: flex;
+            background: var(--pill-inactive);
+            border-radius: 100px;
+            padding: 4px;
+            gap: 2px;
+        }
+        .lang-btn {
+            padding: 6px 18px;
+            border-radius: 100px;
+            border: none;
+            background: transparent;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-tertiary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .lang-btn.active {
+            background: var(--surface);
+            color: var(--text-primary);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+        }
+        .hero {
+            max-width: 720px;
+            margin: 64px auto 48px;
+            padding: 0 40px;
+        }
+        .hero-label {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: var(--accent-light);
+            padding: 5px 14px;
+            border-radius: 100px;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(36px, 5vw, 52px);
+            line-height: 1.1;
+            letter-spacing: -1px;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+        .hero h1 em { font-style: italic; color: var(--accent); }
+        .hero-meta { font-size: 14px; color: var(--text-tertiary); margin-top: 12px; }
+        .content {
+            max-width: 720px;
+            margin: 0 auto 80px;
+            padding: 0 40px;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 32px;
+            background: var(--surface);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+        .section-number {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            margin-bottom: 8px;
+        }
+        .section h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 22px;
+            letter-spacing: -0.3px;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+        .section p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+        .section p:last-child { margin-bottom: 0; }
+        .section ul { list-style: none; margin: 12px 0; }
+        .section ul li {
+            font-size: 15px;
+            color: var(--text-secondary);
+            padding: 6px 0 6px 20px;
+            position: relative;
+        }
+        .section ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px; height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+        .highlight-box {
+            background: var(--accent-light);
+            border-left: 3px solid var(--accent);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 16px 0;
+        }
+        .highlight-box p { color: var(--accent) !important; font-weight: 500; margin: 0 !important; }
+        a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-light); transition: border-color 0.2s; }
+        a:hover { border-color: var(--accent); }
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 32px 40px;
+            text-align: center;
+        }
+        footer p { font-size: 13px; color: var(--text-tertiary); }
+        [data-lang] { display: none; }
+        [data-lang].visible { display: block; }
+        .fade-in { animation: fadeIn 0.4s ease forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 600px) {
+            header { padding: 16px 20px; }
+            .hero, .content { padding: 0 20px; }
+            .hero { margin-top: 40px; }
+            .section { padding: 24px 20px; }
+            footer { padding: 24px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a class="logo" href="#">
+        <div class="logo-icon">💊</div>
+        <span class="logo-name">MySupli</span>
+    </a>
+    <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('es')" id="btn-es">Español</button>
+        <button class="lang-btn" onclick="setLang('en')" id="btn-en">English</button>
+    </div>
+</header>
+
+<!-- ESPAÑOL -->
+<div data-lang="es" class="visible">
+    <div class="hero fade-in">
+        <span class="hero-label">Legal</span>
+        <h1>Política de <em>Privacidad</em></h1>
+        <p class="hero-meta">Última actualización: febrero de 2026</p>
+    </div>
+    <div class="content fade-in">
+        <div class="section">
+            <div class="section-number">01</div>
+            <h2>Responsable del tratamiento</h2>
+            <p>Daniel Carrión Santiago, desarrollador particular.</p>
+            <p>Contacto: <a href="mailto:dcarrion.desarrollo@gmail.com">dcarrion.desarrollo@gmail.com</a></p>
+        </div>
+        <div class="section">
+            <div class="section-number">02</div>
+            <h2>Datos que recopilamos</h2>
+            <div class="highlight-box"><p>MySupli no recopila ni almacena datos personales en servidores externos.</p></div>
+            <p>Toda la información que introduces en la app (suplementos, horarios, notas) se almacena exclusivamente en tu dispositivo mediante SwiftData y, si tienes iCloud activado, en tu cuenta personal de iCloud.</p>
+            <p>Al iniciar sesión con Apple ID, únicamente se utiliza un identificador anónimo para vincular tu cuenta entre dispositivos. No accedemos a tu nombre, email ni ningún otro dato de tu cuenta Apple salvo que tú lo autorices expresamente.</p>
+        </div>
+        <div class="section">
+            <div class="section-number">03</div>
+            <h2>Finalidad del tratamiento</h2>
+            <p>Los datos introducidos en la app se utilizan exclusivamente para:</p>
+            <ul>
+                <li>Mostrar tus suplementos y recordatorios diarios</li>
+                <li>Calcular tu progreso y estadísticas de adherencia</li>
+                <li>Enviar notificaciones locales en los horarios configurados</li>
+                <li>Sincronizar tus datos entre tus dispositivos Apple vía iCloud</li>
+            </ul>
+        </div>
+        <div class="section">
+            <div class="section-number">04</div>
+            <h2>Compartición de datos con terceros</h2>
+            <div class="highlight-box"><p>No vendemos, compartimos ni transferimos tus datos a terceros bajo ningún concepto.</p></div>
+            <p>MySupli no integra SDKs de analítica, publicidad ni redes sociales. No utilizamos servicios de seguimiento como Firebase, Google Analytics ni similares.</p>
+        </div>
+        <div class="section">
+            <div class="section-number">05</div>
+            <h2>Notificaciones</h2>
+            <p>Las notificaciones de MySupli son <strong>exclusivamente locales</strong>. Se generan y muestran en tu dispositivo sin pasar por ningún servidor externo. Puedes desactivarlas en cualquier momento desde los ajustes de tu iPhone.</p>
+        </div>
+        <div class="section">
+            <div class="section-number">06</div>
+            <h2>Tus derechos</h2>
+            <p>En cualquier momento puedes:</p>
+            <ul>
+                <li>Eliminar todos tus datos desde Ajustes → Eliminar cuenta dentro de la app</li>
+                <li>Solicitar información contactando a <a href="mailto:dcarrion.desarrollo@gmail.com">dcarrion.desarrollo@gmail.com</a></li>
+                <li>Revocar el acceso de Sign in with Apple desde Ajustes → [Tu nombre] → Contraseña y seguridad → Apps que usan tu Apple ID</li>
+            </ul>
+        </div>
+        <div class="section">
+            <div class="section-number">07</div>
+            <h2>Menores de edad</h2>
+            <p>MySupli no está dirigida a menores de 13 años. Dado que la app no recopila ningún dato personal en servidores externos, no existe ningún dato que eliminar. Todos los datos residen únicamente en el dispositivo del usuario.</p>
+        </div>
+        <div class="section">
+            <div class="section-number">08</div>
+            <h2>Cambios en esta política</h2>
+            <p>Cualquier cambio relevante será comunicado mediante una actualización de la app. La fecha de última modificación se indica al inicio de este documento.</p>
+        </div>
+        <div class="section">
+            <div class="section-number">09</div>
+            <h2>Contacto</h2>
+            <p>Para cualquier consulta sobre privacidad o protección de datos:</p>
+            <p><a href="mailto:dcarrion.desarrollo@gmail.com">dcarrion.desarrollo@gmail.com</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- ENGLISH -->
+<div data-lang="en">
+    <div class="hero fade-in">
+        <span class="hero-label">Legal</span>
+        <h1><em>Privacy</em> Policy</h1>
+        <p class="hero-meta">Last updated: February 2026</p>
+    </div>
+    <div class="content fade-in">
+        <div class="section">
+            <div class="section-number">01</div>
+            <h2>Data Controller</h2>
+            <p>Daniel Carrión Santiago, independent developer.</p>
+            <p>Contact: <a href="mailto:dcarrion.desarrollo@gmail.com">dcarrion.desarrollo@gmail.com</a></p>
+        </div>
+        <div class="section">
+            <div class="section-number">02</div>
+            <h2>Data We Collect</h2>
+            <div class="highlight-box"><p>MySupli does not collect or store personal data on external servers.</p></div>
+            <p>All information you enter in the app (supplements, schedules, notes) is stored exclusively on your device using SwiftData and, if iCloud is enabled, in your personal iCloud account.</p>
+            <p>When you sign in with Apple ID, only an anonymous identifier is used to link your account across devices. We do not access your name, email, or any other Apple account data unless you explicitly authorize it.</p>
+        </div>
+        <div class="section">
+            <div class="section-number">03</div>
+            <h2>Purpose of Data Processing</h2>
+            <p>Data entered in the app is used exclusively to:</p>
+            <ul>
+                <li>Display your supplements and daily reminders</li>
+                <li>Calculate your progress and adherence statistics</li>
+                <li>Send local notifications at your configured times</li>
+                <li>Sync your data across your Apple devices via iCloud</li>
+            </ul>
+        </div>
+        <div class="section">
+            <div class="section-number">04</div>
+            <h2>Data Sharing with Third Parties</h2>
+            <div class="highlight-box"><p>We do not sell, share, or transfer your data to third parties under any circumstances.</p></div>
+            <p>MySupli does not integrate analytics, advertising, or social media SDKs. We do not use tracking services such as Firebase, Google Analytics, or similar tools.</p>
+        </div>
+        <div class="section">
+            <div class="section-number">05</div>
+            <h2>Notifications</h2>
+            <p>MySupli notifications are <strong>strictly local</strong>. They are generated and displayed on your device without passing through any external server. You can disable them at any time from your iPhone settings.</p>
+        </div>
+        <div class="section">
+            <div class="section-number">06</div>
+            <h2>Your Rights</h2>
+            <p>At any time you can:</p>
+            <ul>
+                <li>Delete all your data from Settings → Delete Account within the app</li>
+                <li>Request information by contacting <a href="mailto:dcarrion.desarrollo@gmail.com">dcarrion.desarrollo@gmail.com</a></li>
+                <li>Revoke Sign in with Apple access from iPhone Settings → [Your name] → Password &amp; Security → Apps Using Apple ID</li>
+            </ul>
+        </div>
+        <div class="section">
+            <div class="section-number">07</div>
+            <h2>Children</h2>
+            <p>MySupli is not directed at children under 13. Since the app does not collect any personal data on external servers, there is no data to delete. All data resides solely on the user's device.</p>
+        </div>
+        <div class="section">
+            <div class="section-number">08</div>
+            <h2>Changes to This Policy</h2>
+            <p>Any significant changes will be communicated through an app update. The date of last modification is indicated at the top of this document.</p>
+        </div>
+        <div class="section">
+            <div class="section-number">09</div>
+            <h2>Contact</h2>
+            <p>For any privacy or data protection inquiries:</p>
+            <p><a href="mailto:dcarrion.desarrollo@gmail.com">dcarrion.desarrollo@gmail.com</a></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Daniel Carrión Santiago · MySupli · <a href="mailto:dcarrion.desarrollo@gmail.com">dcarrion.desarrollo@gmail.com</a></p>
+</footer>
+
+<script>
+    function setLang(lang) {
+        document.querySelectorAll('[data-lang]').forEach(el => el.classList.remove('visible'));
+        const target = document.querySelector('[data-lang="' + lang + '"]');
+        target.classList.add('visible');
+        target.querySelectorAll('.hero, .content').forEach(el => {
+            el.classList.remove('fade-in');
+            void el.offsetWidth;
+            el.classList.add('fade-in');
+        });
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.getElementById('btn-' + lang).classList.add('active');
+        document.documentElement.lang = lang;
+    }
+</script>
+
+</body>
+</html>
