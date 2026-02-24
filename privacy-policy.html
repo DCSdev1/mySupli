@@ -42,11 +42,10 @@
         }
         .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
         .logo-icon {
-            width: 36px; height: 36px;
-            background: var(--accent);
+            width: 36px; 
+            height: 36px;
             border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 18px;
+            object-fit: cover;
         }
         .logo-name {
             font-family: 'DM Serif Display', serif;
@@ -191,7 +190,7 @@
 
 <header>
     <a class="logo" href="#">
-        <div class="logo-icon">💊</div>
+        <img src="icon.png" alt="MySupli" class="logo-icon">
         <span class="logo-name">MySupli</span>
     </a>
     <div class="lang-toggle">
